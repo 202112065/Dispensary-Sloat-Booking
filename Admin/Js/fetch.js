@@ -1,0 +1,3 @@
+function fetch(){
+    $("#FetchData").append('<tr> <th align="left">Sloat no:</th> <td>1</td> </tr> <tr> <th align="left">Patient Sloat Status</th> <td><font color="green">&bull;Cured</font></td> </tr> <tr> <th align="left">Patient Name</th> <td>Kalariya Meet</td> </tr> <tr> <th align="left">Patient Age</th> <td>21</td> </tr> <tr> <td colspan="2"><br/></td> </tr> <tr> <th align="left">Sloat no:</th> <td>2</td> </tr> <tr> <th align="left">Patient Sloat Status</th> <td><font color="green">&bull;Cured</font></td> </tr> <tr> <th align="left">Patient Name</th> <td>Kalariya Meet</td> </tr> <tr> <th align="left">Patient Age</th> <td>21</td> </tr>');
+}

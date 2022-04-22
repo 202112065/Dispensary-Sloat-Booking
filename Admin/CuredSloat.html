@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+    <title>Patient's Sloat Booking List</title>
+    <script src="js/dbconfig.js"></script>
+</head>
+<body>
+    <script>
+    if(!sessionStorage.getItem("dataStorage")){
+        window.location.href="login.html";
+    }
+    </script>
+    <h1>Welcome Dr. <span id="welcome"></span></h1>
+    <script>
+        var retrievedObject = sessionStorage.getItem('dataStorage');
+        var parsedObject = JSON.parse(retrievedObject);
+        var StoreNumber = parsedObject.data[0].Store;
+        firebase.database().ref("Dr").orderByChild("DrPhoneNumber").equalTo(StoreNumber).once("value",function(snapData){
+            snapData.forEach(function(childSnpaData){
+                document.getElementById("welcome").innerHTML = childSnpaData.val().DrUsername;
+            });
+        });
+        </script>
+    <ul>
+        <li>Pending Sloat <a href="PendingSloat.html">Open</a></li>
+        <li>My Profile <a href="UpdateProfile.html">Profile</a></li>
+        <li>Logout Credi <font color="blue" id="logout">Logout</font></li>
+    </ul>
+
+    <h2 align="center">
+        Patient's Cured Sloats
+    </h2>
+    <table align="center" style="width:100%" id="ex-table">
+        <tr id="tr">
+            <th align="left">Sloat no:</th>
+            <th align="left">Patient Sloat Status</th>
+            <th align="left">Patient Name</th>
+            <th align="left">Patient Age</th>
+            <th align="left">Patient Address:</th>
+            <th align="left">Patient Case Status</th>
+            <th align="left">Patient Gender</th>
+            <th align="left">Patient Blood Group</th>
+            <th align="left">Patient Issue</th>
+            <th align="left">Patient Phone Number</th>
+            <th align="left">Patient Weight</th>
+            <th align="left">Prescription</th>
+        </tr>
+    </table>
+    <script src="js/CuredSloat.js"></script>
+    <script src="Js/Logout.js"></script>
+</body>
+</html>
