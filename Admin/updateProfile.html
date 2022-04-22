@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>|| Admin's || Update Profile</title>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!--Custom Css-->
+
+	<!--Firebase Console Config CDN-->
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+	<!--Firebase Database Config-->
+	<script src="Js/dbconfig.js"></script>
+</head>
+
+<body>
+    <script>
+    if(!sessionStorage.getItem("dataStorage")){
+        window.location.href="login.html";
+    }
+    </script>
+    <h1>Dr's Dashboard</h1>
+    <ul>
+        <li>Pending Sloat <a href="PendingSloat.html">Open</a></li>
+        <li>Cured Sloat <a href="CuredSloat.html">Open</a></li>
+        <li>My Profile <a href="updateProfile.html">Profile</a></li>
+        <li>Logout Credi <font color="blue" id="logout">Logout</font></li>
+    </ul>
+        <table align="center" border="1px">
+            <tr>
+                <th colspan="6">Update Profile</th>
+            </tr>
+            <tr>
+                <th align="left">Dr's Degree </th>
+                <td><input type="text"  id="dgree" required title="Dr's Degree"></td>
+            </tr>
+            <tr>
+                <th align="left">Username </th>
+                <td><input type="text" id="dusername" required title="Username"></td>
+            </tr>
+            <tr>
+                <th align="left">Mobilenumber</th>
+                <td><input type="number" id="mNumber" required title="Mobilenumber"></td>
+            </tr>
+            <tr>
+                <th align="left">Email</th>
+                <td><input type="text" id="dremail" required title="Email"></td>
+            </tr> 
+            <tr>
+                <th align="left">Password</th>
+                <td><input type="text" id="pwd" required title="Password"></td>
+            </tr>
+            <tr>
+                <th colspan="6"><center><button id="updt"><font>Update</font></button></center></th>
+            </tr>
+        </table>
+    <script src="Js/Logout.js"></script>
+    <script src="Js/UpdateProfile.js"></script>
+</body>
+
+</html>

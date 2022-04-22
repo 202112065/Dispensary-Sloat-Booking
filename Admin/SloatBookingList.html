@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    if(!sessionStorage.getItem("dataStorage")){
+        window.location.href="login.html";
+    }
+    </script>
+    <h1>Dr's Dashboard</h1>
+    <ul>
+        <li>Pending Sloat <a href="PendingSloat.html">Open</a></li>
+        <li>Cured Sloat <a href="CuredSloat.html">Open</a></li>
+        <li>My Profile <a href="updateProfile.html">Profile</a></li>
+        <li>Logout Credi <font color="blue" id="logout">Logout</font></li>
+    </ul>
+    <h2 align="center">
+        Patient's SloatBooking<br/>
+        <a href="PendingSloat.html">Load</a>
+    </h2>
+    <script src="Js/Logout.js"></script>
+</body>
+</html>
